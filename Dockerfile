@@ -6,7 +6,7 @@ WORKDIR /home/fluent
 RUN apk --no-cache --update add \
                             build-base \
                             ruby-dev tzdata && \
-    gem install fluent-plugin-ping-message && \
+    gem install fluent-plugin-ping-message fluent-plugin-record-modifier && \
     apk del build-base ruby-dev && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/ && \
     cp /usr/share/zoneinfo/Japan /etc/localtime
